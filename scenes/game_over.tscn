@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvka0pqvfkma1"]
+[gd_scene load_steps=7 format=3 uid="uid://cvka0pqvfkma1"]
 
 [ext_resource type="Script" path="res://scenes/game_over.gd" id="1_cdwou"]
 [ext_resource type="Texture2D" uid="uid://c57fej47adq38" path="res://assets/restart.png" id="2_48wsn"]
@@ -12,6 +12,8 @@ texture = ExtResource("2_48wsn")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_timm0"]
 texture = ExtResource("2_48wsn")
 
+[sub_resource type="Theme" id="Theme_wrm3m"]
+
 [node name="GameOver" type="CanvasLayer"]
 script = ExtResource("1_cdwou")
 
@@ -24,4 +26,13 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_47fcn")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7qyvd")
 theme_override_styles/normal = SubResource("StyleBoxTexture_timm0")
 
+[node name="MenuButton" type="Button" parent="."]
+offset_left = 342.0
+offset_top = 440.0
+offset_right = 502.0
+offset_bottom = 503.0
+theme = SubResource("Theme_wrm3m")
+text = "MENU"
+
 [connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
