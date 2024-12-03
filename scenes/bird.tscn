@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwthlmf6ub6e5"]
+[gd_scene load_steps=8 format=3 uid="uid://bwthlmf6ub6e5"]
 
 [ext_resource type="Script" path="res://scenes/bird.gd" id="1_yxd1b"]
 [ext_resource type="Texture2D" uid="uid://dfuofh4nwer0n" path="res://assets/bird1.png" id="2_tm146"]
 [ext_resource type="Texture2D" uid="uid://533ubvnyvpxe" path="res://assets/bird2.png" id="3_q7obi"]
 [ext_resource type="Texture2D" uid="uid://cb3fw6j2c364v" path="res://assets/bird3.png" id="4_ii0db"]
+[ext_resource type="AudioStream" uid="uid://dgysikjb6moo8" path="res://assets/jump.wav" id="5_i32ow"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j40ey"]
 animations = [{
@@ -36,3 +37,6 @@ animation = &"flying"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_7lndv")
+
+[node name="FlapSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_i32ow")
